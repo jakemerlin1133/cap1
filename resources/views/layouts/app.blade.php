@@ -8,15 +8,16 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link href="/src/styles.css" rel="stylesheet">
 </head>
-<body class="flex">
+<body class="flex bg-[#FFFDF6]">
 
     {{-- Sidebar --}}
    @include('partials.sidebar')
 
 <div class="flex flex-col flex-1 min-h-screen">
         {{-- Header --}}
-        <header class="bg-[#A0C878] text-white p-2 shadow">
-            <h1 class="text-xl font-semibold">Inventory System</h1>
+        <header class="bg-[#A0C878] text-white p-3 shadow flex">
+            <img src="{{ asset('KCR.png') }}" alt="" width="25" height="25" class="inline-block mr-2">
+            <h1 class="text-md font-semibold italic text-[#FAF6E9]">Kabaleyan Cove Resort</h1>
         </header>
 
         {{-- Main Content --}}
