@@ -1,4 +1,4 @@
-<aside class="w-64 bg-blue-900 text-white min-h-screen p-4">
+<aside class="w-64 bg-[#73946B] text-white min-h-screen p-4">
     <h1 class="text-xl font-bold mb-4">Inventory Management</h1>
     <ul>
         <li><a href="{{ route('dashboard') }}" class="block py-2">Dashboard</a></li>

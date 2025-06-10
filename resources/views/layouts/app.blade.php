@@ -12,10 +12,17 @@
     {{-- Sidebar --}}
    @include('partials.sidebar')
 
-    {{-- Main Content --}}
-    <main class="flex-1 p-6">
-        @yield('content')
-    </main>
+<div class="flex flex-col flex-1 min-h-screen">
+        {{-- Header --}}
+        <header class="bg-[#A0C878] text-white p-2 shadow">
+            <h1 class="text-xl font-semibold">Inventory System</h1>
+        </header>
+
+        {{-- Main Content --}}
+        <main class="flex-1 p-6">
+            @yield('content')
+        </main>
+    </div>
 
 </body>
 </html>
