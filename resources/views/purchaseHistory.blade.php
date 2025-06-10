@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Inventory')
+@section('title', 'Purchase History')
 
 @section('content')
     <h1 class="text-2xl font-bold">Purchase History</h1>
