@@ -10,7 +10,7 @@
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <link href="/src/styles.css" rel="stylesheet">
 </head>
-<body x-data="{ sidebarOpen: true }" class="flex bg-[#FFFDF6]">
+<body x-data="{ sidebarOpen: true }" class="flex fixed bg-[#FFFDF6]">
     
     <div 
         x-show="sidebarOpen"
