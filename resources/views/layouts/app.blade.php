@@ -45,8 +45,7 @@
 </div>
 
         {{-- Main Content --}}
-        <main class="flex-1 p-6 mt-10 transition-all duration-350 ease-in-out relative"
-        :class="sidebarOpen ? 'left-64' : 'left-0'"
+        <main class="flex-1 p-6 mt-10 transition-all duration-350 ease-in-out"
         >
             @yield('content')
         </main>
