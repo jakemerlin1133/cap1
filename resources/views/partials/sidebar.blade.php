@@ -1,5 +1,5 @@
 <aside class="w-64 bg-[#73946B] text-white min-h-screen">
-    <h1 class="text-3xl text-[#FAF6E9] bg-[#73946B] font-bold my-4 text-center">Counter 1</h1>
+    <h1 class="text-3xl text-[#FAF6E9] bg-[#73946B] font-bold py-4 text-center">Counter 1</h1>
     <ul>
 
         <li class="flex items-center gap-2 pl-6 py-1 {{ request()->routeIs('dashboard') ? 'bg-[#537D5D]' : '' }}">
