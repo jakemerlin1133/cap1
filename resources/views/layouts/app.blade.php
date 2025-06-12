@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,46 +11,38 @@
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <link href="/src/styles.css" rel="stylesheet">
 </head>
-<body x-data="{ sidebarOpen: true }" class="flex fixed bg-[#FFFDF6]">
-    
-    <div 
-        x-show="sidebarOpen"
-        class="transition-all duration-350 ease-in-out"
-        x-transition:enter="transition transform duration-350"
-        x-transition:enter-start="-translate-x-full"
-        x-transition:enter-end="translate-x-0"
-        x-transition:leave="transition transform duration-350"
-        x-transition:leave-start="translate-x-0"
-        x-transition:leave-end="-translate-x-full"
-    >
+
+<body x-data="{ sidebarOpen: true }" class="flex bg-[#FFFDF6]">
+
+    <div x-show="sidebarOpen" class="fixed top-0 left-0 h-full w-64 z-30 transition-all duration-350 ease-in-out"
+        x-transition:enter="transition transform duration-350" x-transition:enter-start="-translate-x-full"
+        x-transition:enter-end="translate-x-0" x-transition:leave="transition transform duration-350"
+        x-transition:leave-start="translate-x-0" x-transition:leave-end="-translate-x-full">
 
         {{-- Sidebar --}}
         @include('partials.sidebar')
     </div>
 
-     {{-- Page content --}}
-<div class="flex flex-col flex-1 min-h-screen">
+    {{-- Page content --}}
+    <div class="flex flex-col flex-1 min-h-screen">
 
         {{-- Header --}}
-    <div 
-    class="absolute top-0 transition-all duration-350 ease-in-out shadow-xl/20"
-    :class="sidebarOpen ? 'left-64' : 'left-0'"
-    >
-    <header class="bg-[#A0C878] text-white p-3 shadow flex items-center gap-2 w-screen">
-        <i class="fa-solid fa-bars text-xl mr-2 text-[#FAF6E9] cursor-pointer text-shadow-lg"
-           @click="sidebarOpen = !sidebarOpen"
-        ></i>
-        <img src="{{ asset('KCR.png') }}" alt="Logo" class="w-6 h-6 object-contain">
-        <h1 class="text-md font-semibold italic text-[#FAF6E9] text-shadow-lg">Kabaleyan Cove Resort</h1>
-    </header>
-</div>
+        <div class="fixed top-0 right-0 z-20 transition-all duration-350 ease-in-out shadow-xl/20"
+            :class="sidebarOpen ? 'left-64' : 'left-0'">
+            <header class="bg-[#A0C878] text-white p-3 shadow flex items-center gap-2 w-full">
+                <i class="fa-solid fa-bars text-xl mr-2 text-[#FAF6E9] cursor-pointer text-shadow-lg"
+                    @click="sidebarOpen = !sidebarOpen"></i>
+                <img src="{{ asset('KCR.png') }}" alt="Logo" class="w-6 h-6 object-contain">
+                <h1 class="text-md font-semibold italic text-[#FAF6E9] text-shadow-lg">Kabaleyan Cove Resort</h1>
+            </header>
+        </div>
 
         {{-- Main Content --}}
-        <main class="flex-1 p-6 mt-10 transition-all duration-350 ease-in-out"
-        >
+        <main class="flex-1 p-6 mt-10 transition-all duration-350 ease-in-out ">
             @yield('content')
         </main>
     </div>
 
 </body>
+
 </html>
