@@ -1,4 +1,4 @@
-<aside class=" w-64 bg-[#73946B] text-white min-h-screen shadow-xl/30 inset-shadow-sm">
+<aside class=" w-64 bg-[#73946B] text-white min-h-screen shadow-xl/30 inset-shadow-sm h-full">
     <h1 class="text-3xl text-[#FAF6E9] bg-[#73946B] font-bold py-4 text-center text-shadow-lg">Counter 1</h1>
     <ul>
 
