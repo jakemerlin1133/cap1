@@ -15,9 +15,9 @@
         <nav role="navigation" class="flex justify-end" aria-label="Pagination Navigation">
             {{-- Previous Page Link --}}
             @if ($paginator->onFirstPage())
-                <span class="px-4 py-2 mx-2 bg-gray-200 text-gray-100 text-xl font-semibold rounded cursor-not-allowed"><</span>
+                <span class="px-4 py-2 mx-2 bg-gray-200 text-gray-100 text-xl font-semibold rounded cursor-not-allowed shadow-lg"><</span>
             @else
-                <a href="{{ $paginator->previousPageUrl() }}" class="px-4 py-2 mx-1.5 bg-[#537D5D] text-[#FAF6E9] text-xl font-semibold rounded hover:bg-[#9EBC8A]"><</a>
+                <a href="{{ $paginator->previousPageUrl() }}" class="px-4 py-2 mx-1.5 bg-[#537D5D] text-[#FAF6E9] text-xl font-semibold rounded hover:bg-[#9EBC8A] shadow-lg"><</a>
             @endif
 
             {{-- Pagination Elements --}}
@@ -31,9 +31,9 @@
                 @if (is_array($element))
                     @foreach ($element as $page => $url)
                         @if ($page == $paginator->currentPage())
-                            <span class="px-4 py-2 mx-1.5 bg-[#9EBC8A] text-[#FAF6E9] text-xl font-semibold rounded hover:bg-[#9EBC8A]">{{ $page }}</span>
+                            <span class="px-4 py-2 mx-1.5 bg-[#9EBC8A] text-[#FAF6E9] text-xl font-semibold rounded hover:bg-[#9EBC8A] shadow-lg">{{ $page }}</span>
                         @else
-                            <a href="{{ $url }}" class="px-4 py-2 mx-1.5 bg-[#537D5D] text-[#FAF6E9] text-xl font-semibold rounded hover:bg-[#9EBC8A]">{{ $page }}</a>
+                            <a href="{{ $url }}" class="px-4 py-2 mx-1.5 bg-[#537D5D] text-[#FAF6E9] text-xl font-semibold rounded hover:bg-[#9EBC8A] shadow-lg">{{ $page }}</a>
                         @endif
                     @endforeach
                 @endif
@@ -41,9 +41,9 @@
 
             {{-- Next Page Link --}}
             @if ($paginator->hasMorePages())
-                <a href="{{ $paginator->nextPageUrl() }}" class="px-4 py-2 mx-1.5 bg-[#537D5D] text-[#FAF6E9] text-xl font-semibold rounded hover:bg-[#9EBC8A]">></a>
+                <a href="{{ $paginator->nextPageUrl() }}" class="px-4 py-2 mx-1.5 bg-[#537D5D] text-[#FAF6E9] text-xl font-semibold rounded hover:bg-[#9EBC8A] shadow-lg">></a>
             @else
-                <span class="px-4 py-2 mx-2 bg-gray-200 text-gray-100 text-xl font-semibold rounded cursor-not-allowed">></span>
+                <span class="px-4 py-2 mx-2 bg-gray-200 text-gray-100 text-xl font-semibold rounded cursor-not-allowed shadow-lg">></span>
             @endif
         </nav>
     </div>

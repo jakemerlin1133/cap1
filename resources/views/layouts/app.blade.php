@@ -12,7 +12,7 @@
     <link href="/src/styles.css" rel="stylesheet">
 </head>
 
-<body x-data="{ sidebarOpen: true }" class="flex bg-[#FFFDF6]">
+<body x-data="{ sidebarOpen: false }" class="flex bg-[#FFFDF6]">
 
     <div x-show="sidebarOpen" class="fixed top-0 left-0 h-full w-64 z-30 transition-all duration-350 ease-in-out"
         x-transition:enter="transition transform duration-350" x-transition:enter-start="-translate-x-full"
@@ -29,10 +29,10 @@
         {{-- Header --}}
         <div class="fixed top-0 right-0 z-20 transition-all duration-350 ease-in-out shadow-xl/20"
             :class="sidebarOpen ? 'left-64' : 'left-0'">
-            <header class="bg-[#A0C878] text-white p-3 shadow flex items-center gap-2 w-full">
+            <header class="bg-[#A0C878] pl-5 text-white shadow flex items-center gap-2 w-full">
                 <i class="fa-solid fa-bars text-2xl mr-2 text-[#FAF6E9] cursor-pointer text-shadow-lg"
                     @click="sidebarOpen = !sidebarOpen"></i>
-                <img src="{{ asset('KCR.png') }}" alt="Logo" class="w-8 h-8 object-contain">
+                <img src="{{ asset('KCR.png') }}" alt="Logo" class="w-15 h-15 object-contain">
                 <h1 class="text-lg font-semibold italic text-[#FAF6E9] text-shadow-lg">Kabaleyan Cove Resort</h1>
             </header>
         </div>

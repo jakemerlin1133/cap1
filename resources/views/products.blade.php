@@ -31,19 +31,19 @@
                 @foreach ($products as $product)
                     <tr class="odd:bg-[#9EBC8A] even:bg-[#73946B] text-[#FAF6E9]">
                         <th scope="row"
-                            class="px-6 py-4 font-medium text-shadow-lg text-lg w-48 break-words whitespace-normal text-center">
+                            class="px-7 py-4 font-medium text-shadow-lg text-lg w-48 break-words whitespace-normal text-center">
                             {{ $product->ProductName }}
                         </th>
-                        <td class="px-7 py-4 text-shadow-lg text-lg w-40 break-words whitespace-normal text-center">
+                        <td class="px-7 py-4 font-medium text-shadow-lg text-lg w-48 break-words whitespace-normal text-center">
                             {{ $product->category->name ?? 'N/A' }}
                         </td>
-                        <td class="px-7 py-4 text-shadow-lg text-lg w-32 break-words whitespace-normal text-center">
+                        <td class="px-7 py-4 font-medium text-shadow-lg text-lg w-48 break-words whitespace-normal text-center">
                             {{ $product->unit }}
                         </td>
-                        <td class="px-7 py-4 text-shadow-lg text-lg w-20 break-words whitespace-normal text-center">
+                        <td class="px-7 py-4 font-medium text-shadow-lg text-lg w-48 break-words whitespace-normal text-center">
                             {{ $product->stock }}
                         </td>
-                        <td class="px-7 py-4 text-shadow-lg text-lg w-32 break-words whitespace-normal text-center">
+                        <td class="px-7 py-4 font-medium text-shadow-lg text-lg w-48 break-words whitespace-normal text-center">
                             ₱{{ number_format($product->price, 2) }}
                         </td>
                         <td class="px-6 py-4 w-36">
