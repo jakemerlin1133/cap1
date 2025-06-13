@@ -13,6 +13,20 @@ return new class extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
+            $table->string('ProductName');
+
+              // Foreign key for category
+            $table->unsignedBigInteger('category_id');
+            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
+
+             // Weight and unit
+            $table->float('weight');
+            $table->enum('unit', ['KG', 'g']); // You can use string if you prefer
+
+            // Stock and Price
+            $table->integer('stock');
+            $table->float('price');
+
             $table->timestamps();
         });
     }
