@@ -20,7 +20,7 @@ class ProductFactory extends Factory
             'ProductName' => fake()->word(),
             'category_id' => Category::inRandomOrder()->first()->id,
             'weight' => $this->faker->randomFloat(2, 0.1, 100),
-            'unit' => $this->faker->randomElement(['KG', 'g']),
+            'unit' => $this->faker->randomElement(['Kg', 'g']),
             'stock' => $this->faker->numberBetween(1, 1000),
             'price' => $this->faker->randomFloat(2, 10, 10000),
         ];
