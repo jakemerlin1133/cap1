@@ -2,13 +2,13 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\ProductController;
+
 Route::get('/', function () {
     return view('dashboard');
 })->name('dashboard');
 
-Route::get('/order', function () {
-    return view('order');
-})->name('order');
+Route::get('/products', [ProductController::class, 'index'])->name('products');
 
 Route::get('/inventory', function () {
     return view('inventory');

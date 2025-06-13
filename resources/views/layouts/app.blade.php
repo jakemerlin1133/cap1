@@ -29,7 +29,7 @@
         {{-- Header --}}
         <div class="fixed top-0 right-0 z-20 transition-all duration-350 ease-in-out shadow-xl/20"
             :class="sidebarOpen ? 'left-64' : 'left-0'">
-            <header class="bg-[#A0C878] text-white p-2 shadow flex items-center gap-2 w-full">
+            <header class="bg-[#A0C878] text-white p-3 shadow flex items-center gap-2 w-full">
                 <i class="fa-solid fa-bars text-2xl mr-2 text-[#FAF6E9] cursor-pointer text-shadow-lg"
                     @click="sidebarOpen = !sidebarOpen"></i>
                 <img src="{{ asset('KCR.png') }}" alt="Logo" class="w-8 h-8 object-contain">
@@ -38,7 +38,7 @@
         </div>
 
         {{-- Main Content --}}
-        <main class="flex-1 p-6 mt-10 transition-all duration-350 ease-in-out ">
+        <main class="flex-1 p-6 mt-16 transition-all duration-350 ease-in-out bg-[#FFFDF6]">
             @yield('content')
         </main>
     </div>

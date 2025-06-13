@@ -3,8 +3,6 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\ProductController;
-use App\Http\Controllers\UsertController;
-
-Route::apiResource('users', UserController::class);
-Route::apiResource('products', ProductController::class);
+Route::middleware('api')->get('/ping', function () {
+    return response()->json(['status' => 'API working']);
+});

@@ -18,7 +18,7 @@ class ProductFactory extends Factory
     {
         return [
             'ProductName' => fake()->word(),
-            'category_id' => Category::factory(),
+            'category_id' => Category::inRandomOrder()->first()->id,
             'weight' => $this->faker->randomFloat(2, 0.1, 100),
             'unit' => $this->faker->randomElement(['KG', 'g']),
             'stock' => $this->faker->numberBetween(1, 1000),
