@@ -1,7 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="mt-4 grid grid-cols-4 gap-4 w-full">
+<h1 class="text-[#A0C878] font-bold text-2xl ml-3">Dashboard</h1>
+    <div class="mt-4 grid grid-cols-4 gap-4 w-full overflow-x-auto">
       {{-- TOTAL ORDER LIST --}}
         <div class="bg-[#A0C878] shadow-xl/20 rounded-lg">
             <div class="flex items-center justify-between p-4">
@@ -25,7 +26,7 @@
 
 
    {{-- TOTAL INVENTORY LIST --}}
-        <div class="bg-[#D2D0A0] shadow-xl/20 rounded-lg">
+        <div class="bg-[#D2D0A0] shadow-xl/20 rounded-lg overflow-x-auto">
             <div class="flex items-center justify-between p-4">
                 <div>
                     <h1 class="text-[#FAF6E9] text-2xl text-shadow-lg font-bold break-words">1,234</h1>
@@ -46,7 +47,7 @@
         </div>
 
 {{-- TOTAL ACCOUNT LIST --}}
-        <div class="bg-[#9EBC8A] shadow-xl/20 rounded-lg">
+        <div class="bg-[#9EBC8A] shadow-xl/20 rounded-lg overflow-x-auto">
             <div class="flex items-center justify-between p-4">
                 <div>
                     <h1 class="text-[#FAF6E9] text-2xl text-shadow-lg font-bold break-words">5,304</h1>
@@ -68,7 +69,7 @@
 
         
 {{-- TOTAL PURCHAST HISTORY --}}
-        <div class="bg-[#DDEB9D] shadow-xl/20 rounded-lg">
+        <div class="bg-[#DDEB9D] shadow-xl/20 rounded-lg overflow-x-auto">
             <div class="flex items-center justify-between p-4">
                 <div>
                     <h1 class="text-[#FAF6E9] text-2xl text-shadow-lg font-bold break-words">2,304</h1>
