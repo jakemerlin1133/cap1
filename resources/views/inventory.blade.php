@@ -38,7 +38,7 @@
                             {{ $inventory->category->name ?? 'N/A' }}
                         </td>
                         <td class="px-7 py-4 font-medium text-shadow-lg text-lg w-48 break-words whitespace-normal text-center">
-                            {{ $inventory->unit }}
+                            {{ $inventory->weight . " " . $inventory->unit }}
                         </td>
                         <td class="px-7 py-4 font-medium text-shadow-lg text-lg w-48 break-words whitespace-normal text-center">
                             {{ $inventory->stock }}

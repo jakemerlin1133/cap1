@@ -3,7 +3,7 @@
 @section('content')
     <h1 class="text-[#A0C878] font-bold text-5xl ml-3 text-shadow-lg mb-10">Purchase History</h1>
     <div class=" mt-4 overflow-x-auto shadow-md sm:rounded-lg">
-        <table class="w-full text-sm text-left text-shadow-lg">
+        <table class="w-full text-sm text-left text-shadow-lg ">
             <thead class="text-xs text-[#FAF6E9] uppercase bg-[#537D5D]">
                 <tr>
                     <th scope="col" class="px-6 py-3 text-shadow-lg text-center">
@@ -21,6 +21,9 @@
                     <th scope="col" class="px-6 py-4 text-shadow-lg text-center">
                         Price
                     </th>
+                    <th scope="col" class="px-6 py-4 text-shadow-lg text-center">
+                        Date Purchased
+                    </th>
                 </tr>
             </thead>
 
@@ -35,13 +38,16 @@
                             {{ $purchaseHistory->category->name ?? 'N/A' }}
                         </td>
                         <td class="px-7 py-4 font-medium text-shadow-lg text-lg w-48 break-words whitespace-normal text-center">
-                            {{ $purchaseHistory->unit }}
+                            {{ $purchaseHistory->weight . " " . $purchaseHistory->unit }}
                         </td>
                         <td class="px-7 py-4 font-medium text-shadow-lg text-lg w-48 break-words whitespace-normal text-center">
                             {{ $purchaseHistory->stock }}
                         </td>
                         <td class="px-7 py-4 font-medium text-shadow-lg text-lg w-48 break-words whitespace-normal text-center">
                             ₱{{ number_format($purchaseHistory->price, 2) }}
+                        </td>
+                         <td class="px-7 py-4 font-medium text-shadow-lg text-lg w-48 break-words whitespace-normal text-center">
+                            {{ $purchaseHistory->created_at->format('F j, Y') }}
                         </td>
                     </tr>
                 @endforeach

@@ -21,5 +21,13 @@ class DatabaseSeeder extends Seeder
             ProductSeeder::class,
         ]);
 
+         $this->call([
+            UserSeeder::class,
+        ]);
+
+            $this->call([
+                PurchaseHistorySeeder::class,
+            ]);
+
     }
 }

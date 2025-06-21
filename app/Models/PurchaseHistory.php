@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class PurchaseHistory extends Model
 {
     use HasFactory;
-    protected $table = 'products';
+    protected $table = 'purchase_history';
 
     public function category()
     {
