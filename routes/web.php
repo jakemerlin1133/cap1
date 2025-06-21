@@ -3,6 +3,9 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\InventoryController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\PurchaseHistoryController;
 
 Route::get('/', function () {
     return view('dashboard');
@@ -10,17 +13,11 @@ Route::get('/', function () {
 
 Route::get('/products', [ProductController::class, 'index'])->name('products');
 
-Route::get('/inventory', function () {
-    return view('inventory');
-})->name('inventory');
+Route::get('/inventory', [InventoryController::class, 'index'])->name('inventory');
 
-Route::get('/account-list', function () {
-    return view('accountList');
-})->name('accountList');
+Route::get('/accountList', [UserController::class, 'index'])->name('accountList');
 
-Route::get('/purchaseHistory', function () {
-    return view('purchaseHistory');
-})->name('purchaseHistory');
+Route::get('/purchaseHistory', [PurchaseHistoryController::class, 'index'])->name('purchaseHistory');
 
 Route::get('/profile', function () {
     return view('profile');

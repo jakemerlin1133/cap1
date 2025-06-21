@@ -1,244 +1,65 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1 class="text-[#A0C878] font-bold text-2xl ml-3">Purchase History</h1>
-<div class=" mt-4 overflow-x-auto shadow-md sm:rounded-lg">
-    <table class="w-full text-sm text-left text-gray-500">
-        <thead class="text-xs text-[#FAF6E9] uppercase bg-[#537D5D]">
-            <tr>
-                <th scope="col" class="px-6 py-3">
-                    Product Name
-                </th>
-                <th scope="col" class="px-6 py-3">
-                    Categories
-                </th>
-                <th scope="col" class="px-6 py-3">
-                    Kg/gram
-                </th>
-                <th scope="col" class="px-6 py-3">
-                    Price
-                </th>
-                <th scope="col" class="px-6 py-3">
-                    Action
-                </th>
-            </tr>
-        </thead>
+    <h1 class="text-[#A0C878] font-bold text-5xl ml-3 text-shadow-lg mb-10">Purchase History</h1>
+    <div class=" mt-4 overflow-x-auto shadow-md sm:rounded-lg">
+        <table class="w-full text-sm text-left text-shadow-lg">
+            <thead class="text-xs text-[#FAF6E9] uppercase bg-[#537D5D]">
+                <tr>
+                    <th scope="col" class="px-6 py-3 text-shadow-lg text-center">
+                        Product Name
+                    </th>
+                    <th scope="col" class="px-6 py-4 text-shadow-lg text-center">
+                        Categories
+                    </th>
+                    <th scope="col" class="px-6 py-4 text-shadow-lg text-center">
+                        Kg/gram
+                    </th>
+                    <th scope="col" class="px-6 py-4 text-shadow-lg text-center">
+                        Stock
+                    </th>
+                    <th scope="col" class="px-6 py-4 text-shadow-lg text-center">
+                        Price
+                    </th>
+                </tr>
+            </thead>
 
-        <tbody>
-            <tr class="border-b border-gray-200 bg-[#9EBC8A] text-[#FAF6E9]">
-                <th scope="row" class="px-6 py-4 font-medium whitespace-nowrap">
-                    Apple MacBook Pro 17"
-                </th>
-                <td class="px-6 py-4">
-                    Silver
-                </td>
-                <td class="px-6 py-4">
-                    Laptop
-                </td>
-                <td class="px-6 py-4">
-                    $2999
-                </td>
-                <td class="px-6 py-4">
-                    <a href="#" class="font-medium text-[#FAF6E9] hover:underline">Edit</a>
-                </td>
-            </tr>
+            <tbody>
+                @foreach ($purchaseHistories as $purchaseHistory)
+                    <tr class="odd:bg-[#9EBC8A] even:bg-[#73946B] text-[#FAF6E9]">
+                        <th scope="row"
+                            class="px-7 py-4 font-medium text-shadow-lg text-lg w-48 break-words whitespace-normal text-center">
+                            {{ $purchaseHistory->ProductName }}
+                        </th>
+                        <td class="px-7 py-4 font-medium text-shadow-lg text-lg w-48 break-words whitespace-normal text-center">
+                            {{ $purchaseHistory->category->name ?? 'N/A' }}
+                        </td>
+                        <td class="px-7 py-4 font-medium text-shadow-lg text-lg w-48 break-words whitespace-normal text-center">
+                            {{ $purchaseHistory->unit }}
+                        </td>
+                        <td class="px-7 py-4 font-medium text-shadow-lg text-lg w-48 break-words whitespace-normal text-center">
+                            {{ $purchaseHistory->stock }}
+                        </td>
+                        <td class="px-7 py-4 font-medium text-shadow-lg text-lg w-48 break-words whitespace-normal text-center">
+                            ₱{{ number_format($purchaseHistory->price, 2) }}
+                        </td>
+                    </tr>
+                @endforeach
 
-            <tr class="border-b border-gray-200 bg-[#73946B] text-[#FAF6E9]">
-                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                    Microsoft Surface Pro
-                </th>
-                <td class="px-6 py-4">
-                    White
-                </td>
-                <td class="px-6 py-4">
-                    Laptop PC
-                </td>
-                <td class="px-6 py-4">
-                    $1999
-                </td>
-                <td class="px-6 py-4">
-                    <a href="#" class="font-medium text-[#FAF6E9] hover:underline">Edit</a>
-                </td>
-            </tr>
+            <tfoot class="bg-[#FAF6E9]">
+                <tr>
+                    <td colspan="10" class="pt-4">
+                        <div class="w-full px-4 mb-4">
+                            <div
+                                class="">
+                                {!! $purchaseHistories->links('vendor.pagination.custom') !!}
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </tfoot>
 
-            <tr class="border-b border-gray-200 bg-[#9EBC8A] text-[#FAF6E9]">
-                <th scope="row" class="px-6 py-4 font-medium whitespace-nowrap">
-                    Apple MacBook Pro 17"
-                </th>
-                <td class="px-6 py-4">
-                    Silver
-                </td>
-                <td class="px-6 py-4">
-                    Laptop
-                </td>
-                <td class="px-6 py-4">
-                    $2999
-                </td>
-                <td class="px-6 py-4">
-                    <a href="#" class="font-medium text-[#FAF6E9] hover:underline">Edit</a>
-                </td>
-            </tr>
-
-            <tr class="border-b border-gray-200 bg-[#73946B] text-[#FAF6E9]">
-                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                    Microsoft Surface Pro
-                </th>
-                <td class="px-6 py-4">
-                    White
-                </td>
-                <td class="px-6 py-4">
-                    Laptop PC
-                </td>
-                <td class="px-6 py-4">
-                    $1999
-                </td>
-                <td class="px-6 py-4">
-                    <a href="#" class="font-medium text-[#FAF6E9] hover:underline">Edit</a>
-                </td>
-            </tr>
-            <tr class="border-b border-gray-200 bg-[#9EBC8A] text-[#FAF6E9]">
-                <th scope="row" class="px-6 py-4 font-medium whitespace-nowrap">
-                    Apple MacBook Pro 17"
-                </th>
-                <td class="px-6 py-4">
-                    Silver
-                </td>
-                <td class="px-6 py-4">
-                    Laptop
-                </td>
-                <td class="px-6 py-4">
-                    $2999
-                </td>
-                <td class="px-6 py-4">
-                    <a href="#" class="font-medium text-[#FAF6E9] hover:underline">Edit</a>
-                </td>
-            </tr>
-
-            <tr class="border-b border-gray-200 bg-[#73946B] text-[#FAF6E9]">
-                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                    Microsoft Surface Pro
-                </th>
-                <td class="px-6 py-4">
-                    White
-                </td>
-                <td class="px-6 py-4">
-                    Laptop PC
-                </td>
-                <td class="px-6 py-4">
-                    $1999
-                </td>
-                <td class="px-6 py-4">
-                    <a href="#" class="font-medium text-[#FAF6E9] hover:underline">Edit</a>
-                </td>
-            </tr>
-            <tr class="border-b border-gray-200 bg-[#9EBC8A] text-[#FAF6E9]">
-                <th scope="row" class="px-6 py-4 font-medium whitespace-nowrap">
-                    Apple MacBook Pro 17"
-                </th>
-                <td class="px-6 py-4">
-                    Silver
-                </td>
-                <td class="px-6 py-4">
-                    Laptop
-                </td>
-                <td class="px-6 py-4">
-                    $2999
-                </td>
-                <td class="px-6 py-4">
-                    <a href="#" class="font-medium text-[#FAF6E9]  hover:underline">Edit</a>
-                </td>
-            </tr>
-
-            <tr class="border-b border-gray-200 bg-[#73946B] text-[#FAF6E9]">
-                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                    Microsoft Surface Pro
-                </th>
-                <td class="px-6 py-4">
-                    White
-                </td>
-                <td class="px-6 py-4">
-                    Laptop PC
-                </td>
-                <td class="px-6 py-4">
-                    $1999
-                </td>
-                <td class="px-6 py-4">
-                    <a href="#" class="font-medium text-[#FAF6E9] hover:underline">Edit</a>
-                </td>
-            </tr>
-
-            <tr class="border-b border-gray-200 bg-[#9EBC8A] text-[#FAF6E9]">
-                <th scope="row" class="px-6 py-4 font-medium whitespace-nowrap">
-                    Apple MacBook Pro 17"
-                </th>
-                <td class="px-6 py-4">
-                    Silver
-                </td>
-                <td class="px-6 py-4">
-                    Laptop
-                </td>
-                <td class="px-6 py-4">
-                    $2999
-                </td>
-                <td class="px-6 py-4">
-                    <a href="#" class="font-medium text-[#FAF6E9] hover:underline">Edit</a>
-                </td>
-            </tr>
-
-            <tr class="border-b border-gray-200 bg-[#73946B] text-[#FAF6E9]">
-                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                    Microsoft Surface Pro
-                </th>
-                <td class="px-6 py-4">
-                    White
-                </td>
-                <td class="px-6 py-4">
-                    Laptop PC
-                </td>
-                <td class="px-6 py-4">
-                    $1999
-                </td>
-                <td class="px-6 py-4">
-                    <a href="#" class="font-medium text-[#FAF6E9] hover:underline">Edit</a>
-                </td>
-            </tr>
-
-            <tr class="border-b border-gray-200 bg-[#9EBC8A] text-[#FAF6E9]">
-                <th scope="row" class="px-6 py-4 font-medium whitespace-nowrap">
-                    Apple MacBook Pro 17"
-                </th>
-                <td class="px-6 py-4">
-                    Silver
-                </td>
-                <td class="px-6 py-4">
-                    Laptop
-                </td>
-                <td class="px-6 py-4">
-                    $2999
-                </td>
-                <td class="px-6 py-4">
-                    <a href="#" class="font-medium text-[#FAF6E9] hover:underline">Edit</a>
-                </td>
-            </tr>
-
-            <tr class="border-b border-gray-200 bg-[#73946B] text-[#FAF6E9]">
-                <th scope="row" class="px-6 py-4 font-medium text-[#FAF6E9] whitespace-nowrap dark:text-white">
-                    Microsoft Surface Pro
-                </th>
-                <td class="px-6 py-4">
-                    White
-                </td>
-                <td class="px-6 py-4">
-                    Laptop PC
-                </td>
-                <td class="px-6 py-4">
-                    $1999
-                </td>
-                <td class="px-6 py-4">
-                    <a href="#" class="font-medium text-[#FAF6E9] hover:underline ">Edit</a>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</div>
+            </tbody>
+        </table>
+    </div>
 @endsection

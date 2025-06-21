@@ -1,7 +1,17 @@
 <aside class=" w-64 bg-[#73946B] text-white min-h-screen shadow-xl/30 inset-shadow-sm h-full">
-    <h1 class="text-3xl text-[#FAF6E9] bg-[#73946B] font-bold py-4 text-center text-shadow-lg">Counter 1</h1>
-    <ul>
 
+    
+    <div class="flex items-center pt-6">  
+        <div class="relative w-16 h-16 overflow-hidden bg-gray-100 rounded-full dark:bg-gray-600 mx-4">
+            <svg class="absolute w-16 h-16 text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path></svg>
+        </div>
+
+        <div>
+            <h1 class="text-3xl text-[#FAF6E9] bg-[#73946B] font-bold py-4 text-center text-shadow-lg">Counter 1</h1>
+        </div>
+    </div>
+   
+    <ul>
         <li
             class="flex items-center gap-2 pl-6 py-1 my-2 text-shadow-lg hover:bg-[#537D5D] hover:shadow-xl/20 {{ request()->routeIs('dashboard') ? 'bg-[#537D5D] shadow-xl/20' : '' }}">
 
